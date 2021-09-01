@@ -1,5 +1,11 @@
+.about__inner {
+  max-width: var(--tablet);
+  margin: 0 auto;
+  padding: 0 var(--pads);
+}
+
 .about__title {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   text-align: center;
 }
 
@@ -12,8 +18,19 @@
 }
 
 @media screen and (--tablet) {
+  .about__inner {
+    max-width: var(--desktop);
+    margin: 0 auto;
+    padding: 0 var(--pads);
+  }
+
+  .about__text-holder {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+
   .about__title {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   .about__features {
@@ -22,5 +39,7 @@
 }
 
 @media screen and (--desktop) {
-
+  .about__text-holder {
+    width: 880px;
+  }
 }

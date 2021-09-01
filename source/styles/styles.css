@@ -2,6 +2,7 @@
 @import "global/fonts";
 @import "global/vars";
 @import "global/base";
+@import "partials/page";
 @import "partials/visually-hidden";
 @import "partials/button";
 @import "partials/logo";
@@ -11,5 +12,3 @@
 @import "partials/intro";
 @import "partials/title";
 @import "partials/about";
-
-

@@ -1,13 +1,13 @@
 .button {
   display: inline-block;
   vertical-align: middle;
-  padding: 14px 40px;
+  padding: 14px 45px;
   border: none;
   background-color: var(--special-color);
   font-size: 14px;
   line-height: 20px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--black);
   text-align: center;
   text-transform: uppercase;

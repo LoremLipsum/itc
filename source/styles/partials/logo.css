@@ -1,11 +1,23 @@
 .logo {
   display: block;
-  width: 100px;
-  height: 50px;
+  width: 112px;
+  height: 20px;
 }
 
 .logo__image {
   display: block;
-  width: 100px;
-  height: 50px;
+  width: 112px;
+  height: 20px;
+}
+
+@media screen and (--tablet) {
+  .logo {
+    width: 125px;
+    height: 21px;
+  }
+
+  .logo__image {
+    width: 125px;
+    height: 21px;
+  }
 }

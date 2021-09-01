@@ -38,16 +38,16 @@
 
 .intro__header {
   position: relative;
-  padding-bottom: 70px;
+  padding-bottom: 50px;
   text-align: center;
 
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: calc(50% - 53px);
-    width: 106px;
-    height: 25px;
+    left: calc(50% - 38px);
+    width: 76px;
+    height: 18px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -58,7 +58,7 @@
 .intro__text-before {
   margin: 0;
   margin-bottom: 5px;
-  font-size: 30px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: 400;
   color: var(--white);
@@ -66,10 +66,10 @@
 
 .intro__title {
   margin: 0;
-  font-size: 68px;
+  font-size: 36px;
   line-height: 1.2;
   font-weight: 800;
-  letter-spacing: 20px;
+  letter-spacing: 5px;
   color: var(--white);
   text-transform: uppercase;
 }
@@ -77,7 +77,7 @@
 .intro__text-after {
   margin: 0;
   margin-top: 5px;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.2;
   font-weight: 400;
   color: var(--white);
@@ -86,6 +86,14 @@
 .intro__footer {
   margin-top: 50px;
   text-align: center;
+}
+
+@media screen and (--large-mob) {
+  .intro__header {
+    br {
+      display: none;
+    }
+  }
 }
 
 @media screen and (--tablet) {
@@ -107,22 +115,27 @@
     max-width: var(--desktop);
   }
 
-  .inner__header {
+  .intro__header {
     padding-bottom: 50px;
 
     &:after {
-      left: calc(50% - 25px);
-      width: 50px;
-      height: 30px;
+      left: calc(50% - 46px);
+      width: 92px;
+      height: 24px;
+    }
+
+    br {
+      display: none;
     }
   }
 
   .intro__text-before {
-    font-size: 16px;
+    font-size: 24px;
   }
 
   .intro__title {
-    font-size: 16px;
+    font-size: 54px;
+    letter-spacing: 10px;
   }
 
   .intro__text-after {
@@ -131,13 +144,18 @@
 }
 
 @media screen and (--desktop) {
-  .inner__header {
-    padding-bottom: 50px;
+  .intro {
+    min-height: 730px;
+    padding: 50px 0 60px;
+  }
+
+  .intro__header {
+    padding-bottom: 75px;
 
     &:after {
-      left: calc(50% - 25px);
-      width: 50px;
-      height: 30px;
+      left: calc(50% - 53px);
+      width: 106px;
+      height: 24px;
     }
   }
 
@@ -147,9 +165,14 @@
 
   .intro__title {
     font-size: 68px;
+    letter-spacing: 22px;
   }
 
   .intro__text-after {
     font-size: 18px;
+  }
+
+  .intro__footer {
+    margin-top: 55px;
   }
 }

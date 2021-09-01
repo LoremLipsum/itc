@@ -3,8 +3,8 @@ body {
   margin: 0;
   background-color: var(--white);
   font-family: var(--base-font-family);
-  font-size: 13px;
-  line-height: 2.;
+  font-size: 14px;
+  line-height: 2;
   font-weight: 400;
   color: var(--base-font-color);
   text-size-adjust: 100%;
@@ -42,8 +42,16 @@ table {
   border-spacing: 0;
 }
 
+@media screen and (--tablet) {
+  body {
+    font-size: 15px;
+    line-height: 2.3;
+  }
+}
+
 @media screen and (--desktop) {
   body {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 2.6;
   }
 }
