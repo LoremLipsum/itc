@@ -1,0 +1,26 @@
+.about__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about__text-holder {
+  text-align: center;
+}
+
+.about__features {
+  margin-top: 20px;
+}
+
+@media screen and (--tablet) {
+  .about__title {
+    margin-bottom: 20px;
+  }
+
+  .about__features {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (--desktop) {
+
+}

@@ -1,0 +1,32 @@
+.title {
+  position: relative;
+  margin: 0;
+  padding-bottom: 40px;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--base-font-color);
+
+  &::after {
+    content: "~~~~~ :: ~~~~~";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--base-font-color);
+  }
+}
+
+@media screen and (--tablet) {
+  .title {
+    padding-bottom: 40px;
+    font-size: 20px;
+
+    &::after {
+      font-size: 20px;
+    }
+  }
+}

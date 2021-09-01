@@ -1,0 +1,14 @@
+.Page {
+  height: 100%;
+}
+
+.Page-Body {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  min-height: 100%;
+}
+
+.Page-Main {
+  background-color: var(--light-bg);
+}
+

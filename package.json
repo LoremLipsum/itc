@@ -1,0 +1,54 @@
+{
+  "name": "lorem_ipsum",
+  "private": true,
+  "description": "Lorem ipsum dolor sit amen",
+  "homepage": "https://loremlipsum.github.io/itc/",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "autoprefixer": "10.2.5",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gh-pages": "^3.2.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-nunjucks": "^5.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "nunjucks": "^3.2.3",
+    "postcss": "^8.3.5",
+    "postcss-csso": "^5.0.1",
+    "postcss-custom-media": "^8.0.0",
+    "postcss-import": "^14.0.2",
+    "postcss-nested": "^5.0.5",
+    "postcss-url": "^10.1.3",
+    "stylelint": "13.12.0",
+    "stylelint-config-standard": "^22.0.0"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint source/styles/**/*.css",
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp",
+    "deploy": "gh-pages -d build"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/scripts/**/*.js",
+    "source/images/**/*.svg",
+    "source/styles/**/*.css"
+  ],
+  "engines": {
+    "node": "14.15.0"
+  }
+}

@@ -1,0 +1,18 @@
+.TextField {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 16px;
+  border: none;
+  border: 1px solid var(--border-dark);
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--base-font-color);
+
+  &:disabled,
+  .is-disabled {
+    color: var(--disabled);
+  }
+}
