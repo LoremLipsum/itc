@@ -10,13 +10,12 @@
   --white: hsl(var(--white-h), var(--white-s), var(--white-l));
   --base-h: 178;
   --base-s: 97%;
-  --base-l: 26%;
+  --base-l: 29%;
   --base-color: hsl(var(--base-h), var(--base-s), var(--base-l));
   --base-color-shadow: hsl(201, 100%, 40%);
   --special-color: hsl(58, 75%, 46%);
   --special-color-shadow: hsl(58, 75%, 36%);
-  --base-font-color: hsl(213, 4%, 40%);
-  --light-font-color: hsl(213, 4%, 50%);
+  --base-font-color: hsl(213, 4%, 51%);
   --dark-font-h: 213;
   --dark-font-s: 33%;
   --dark-font-l: 6%;
