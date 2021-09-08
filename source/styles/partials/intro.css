@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: calc(100vh - 50px);
-  padding: 20px 0;
+  min-height: 100vh;
+  padding: 72px 0 20px;
   background-color: var(--black);
   color: var(--white);
 
@@ -20,11 +20,6 @@
     background-position: center;
     background-image: url("../assets/images/intro/intro-bg-mob.jpg");
     opacity: 0.34;
-
-    @media (min-resolution: 2dppx) {
-      background-image: url("../assets/images/intro/intro-bg-mob@2x.jpg");
-      background-size: cover;
-    }
   }
 }
 
@@ -98,16 +93,10 @@
 
 @media screen and (--tablet) {
   .intro {
-    min-height: calc(100vh - 50px);
-    padding: 40px 0;
+    padding: 101px 0 40px;
 
     &::before {
       background-image: url("../assets/images/intro/intro-bg-desk.jpg");
-
-      @media (min-resolution: 2dppx) {
-        background-image: url("../assets/images/intro/intro-bg-desk@2x.jpg");
-        background-size: cover;
-      }
     }
   }
 
@@ -145,8 +134,8 @@
 
 @media screen and (--desktop) {
   .intro {
-    min-height: 730px;
-    padding: 50px 0 60px;
+    min-height: 790px;
+    padding: 111px 0 60px;
   }
 
   .intro__header {

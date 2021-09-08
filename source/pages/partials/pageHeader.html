@@ -16,7 +16,7 @@
   },
   {
     title: 'My work',
-    href: '#my-work'
+    href: '#portfolio'
   },
   {
     title: 'Contact me',
@@ -24,23 +24,23 @@
   }
 ] %}
 
-<header class="{{ mixClass }} page-header">
-  <div class="page-header__inner">
-    <a href="" class="page-header__logo logo">
-      <img class="logo__image" src="assets/images/logo.svg" width="125" height="20" alt="Logo">
-    </a>
-    <button class="page-header__burger burger" type="button">
-      <span class="visually-hidden">Menu</span>
-    </button>
-    <nav class="page-header__main-nav main-nav">
-      <ul class="main-nav__list">
-        {% for item in items %}
-          <li class="main-nav__item">
-            <a href="{{ item.href }}" class="main-nav__link">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
-</header>
+  <header class="{{ mixClass }} page-header">
+    <div class="page-header__inner">
+      <a class="page-header__logo logo">
+        <img class="logo__image" src="assets/images/logo.svg" width="125" height="20" alt="Logo">
+      </a>
+      <button class="page-header__burger burger j-burger" type="button">
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="page-header__main-nav main-nav j-main-nav">
+        <ul class="main-nav__list">
+          {% for item in items %}
+            <li class="main-nav__item">
+              <a href="{{ item.href }}" class="main-nav__link j-scroll-link">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
 {% endmacro %}

@@ -1,0 +1,23 @@
+{
+  "name": "My Application",
+  "short_name": "App",
+  "description": "Application OK",
+  "lang": "ru-Ru",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "assets/images/192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/images/512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

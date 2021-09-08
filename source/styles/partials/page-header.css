@@ -1,6 +1,8 @@
 .page-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 10;
   padding: 10px 0;
   background-color: var(--base-color);
@@ -23,10 +25,11 @@
 }
 
 .page-header__main-nav {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 52px;
   left: 0;
   right: 0;
+  bottom: 0;
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -69,8 +72,4 @@
       display: block;
     }
   }
-}
-
-@media screen and (--desktop) {
-
 }

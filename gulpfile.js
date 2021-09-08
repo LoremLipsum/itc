@@ -6,10 +6,15 @@ const postcssNested = require("postcss-nested")
 const postcssCsso = require("postcss-csso");
 const postcssCustomMedia = require('postcss-custom-media');
 const autoprefixer = require("autoprefixer");
-const imagemin = require("gulp-imagemin");
+const svgsprite = require("gulp-svg-sprite");
+const nunjucks = require('gulp-nunjucks');
+const htmlmin = require("gulp-htmlmin");
+const terser = require('gulp-terser');
+const webp = require("gulp-webp");
+const avif = require('gulp-avif');
+const rename = require("gulp-rename");
 const del = require("del");
 const sync = require("browser-sync").create();
-const nunjucks = require('gulp-nunjucks');
 
 const styles = () => {
   return gulp.src("source/styles/styles.css")
@@ -31,22 +36,19 @@ exports.styles = styles;
 const njk = () => {
   return gulp.src("source/pages/*.html")
     .pipe(nunjucks.compile())
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('./build'))
 }
 
 exports.njk = njk;
 
-const optimizeImages = () => {
-  return gulp.src("source/assets/images/**/*.{png,jpg,svg}")
-    .pipe(imagemin([
-      imagemin.mozjpeg({progressive: true}),
-      imagemin.optipng({optimizationLevel: 3}),
-      imagemin.svgo()
-    ]))
-    .pipe(gulp.dest("build/assets/images"))
+const scripts = () => {
+  return gulp.src("source/scripts/**/*.js")
+    .pipe(terser())
+    .pipe(gulp.dest("build/scripts"))
 }
 
-exports.images = optimizeImages;
+exports.scripts = scripts;
 
 const copyImages = () => {
   return gulp.src("source/assets/images/**/*.{png,jpg,svg}")
@@ -55,9 +57,41 @@ const copyImages = () => {
 
 exports.images = copyImages;
 
+const createWebp = () => {
+  return gulp.src("source/assets/images/**/*.{jpg,png}")
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest("build/assets/images"))
+}
+
+exports.createWebp = createWebp;
+
+const createAvif = () => {
+  return gulp.src("source/assets/images/**/*.{jpg,png}")
+    .pipe(avif({quality: 90}))
+    .pipe(gulp.dest("build/assets/images"))
+}
+
+exports.createAvif = createAvif;
+
+const svgSprite = () => {
+  return gulp.src("source/assets/icons/**/*.svg")
+    .pipe(plumber())
+    .pipe(svgsprite({
+      mode: {
+        stack: {}
+      }
+    }))
+    .pipe(rename("svgsprite.svg"))
+    .pipe(gulp.dest("build/assets/icons"));
+}
+
+exports.svgSprite = svgSprite;
+
 const copy = () => {
   return gulp.src([
-    'source/assets/fonts/**/*'
+    'source/assets/fonts/**/*',
+    'source/favicon.ico',
+    'source/manifest.webmanifest'
   ], {
     base: 'source'
   }).pipe(gulp.dest('build/'));
@@ -89,15 +123,20 @@ const watcher = () => {
   gulp.watch("source/styles/**/*.css", styles);
   gulp.watch("source/images/*.{jpg,png,svg}", copyImages);
   gulp.watch("source/pages/**/*.html", njk);
+  gulp.watch("source/scripts/**/*.js", scripts);
 }
 
 const build = gulp.series(
   clean,
   copy,
-  optimizeImages,
+  copyImages,
   gulp.parallel(
     styles,
-    njk
+    njk,
+    scripts,
+    svgSprite,
+    createWebp,
+    createAvif
   ),
 );
 
@@ -109,7 +148,11 @@ exports.default = gulp.series(
   copyImages,
   gulp.parallel(
     styles,
-    njk
+    njk,
+    scripts,
+    svgSprite,
+    createWebp,
+    createAvif
   ),
   gulp.series(
     server,

@@ -1,5 +1,11 @@
 .page {
   height: 100%;
+  scroll-behavior: smooth;
+
+  &.is-open-main-nav {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 
 .page__body {
@@ -7,26 +13,6 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   min-height: 100%;
-/*
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: top center;
-    background-image: url("../assets/images/Portfolio.jpg");
-    opacity: 0.4;
-    filter: sepia(100%);
-  } */
-}
-
-.page__main {
-  background-color: var(--light-bg);
 }
 
 .page__section {
@@ -46,7 +32,7 @@
 @media screen and (--desktop) {
   .page__section {
     &:not(:last-child) {
-      margin-bottom: 100px;
+      margin-bottom: 85px;
     }
   }
 }

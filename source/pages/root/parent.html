@@ -1,0 +1,31 @@
+
+{% from '../partials/pageHeader.html' import pageHeader %}
+{% from '../partials/pageFooter.html' import pageFooter %}
+
+<!DOCTYPE html>
+<html class="page" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta name="description" content="Put your description here.">
+  <meta name="theme-color" content="#FFFFFF"/>
+  <link rel="preload" href="./assets/fonts/open-sans/open-sans-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/open-sans/open-sans-extra-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="./favicon.ico">
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/apple.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body class="page__body j-body">
+  {{ pageHeader('page__header') }}
+  <main class="page__main">
+    {% block content %}
+    {% endblock %}
+  </main>
+  {{ pageFooter('page__footer') }}
+  <script src="./scripts/main.js" type="module"></script>
+</body>
+</html>

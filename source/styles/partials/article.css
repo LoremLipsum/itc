@@ -1,0 +1,22 @@
+.article {
+  p {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.article__large-text {
+  font-size: 1.4em;
+  font-weight: 800;
+}
