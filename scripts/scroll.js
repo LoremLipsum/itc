@@ -1,0 +1,1 @@
+import{TABLET}from"./utils.js";const getScrollOfset=t=>document.documentElement.clientWidth<t?-70:-120;let scrollOfset=getScrollOfset(TABLET);const onClickScrollLink=t=>{t.preventDefault();let e=document.querySelector(t.target.getAttribute("href")).getBoundingClientRect().top+window.pageYOffset+scrollOfset;window.scroll({top:e,behavior:"smooth"})};export{onClickScrollLink};

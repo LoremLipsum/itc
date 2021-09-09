@@ -1,8 +1,0 @@
-/node_modules
-/build
-.DS_Store
-.idea
-.vscode
-*.log
-npm-debug.*
-Thumbs.db
